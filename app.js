@@ -1,7 +1,19 @@
 //setup.. this is similar to when we use our default tags in html
 const express = require("express")
 //activate or tell this app variable to be an express server
-const app = express()
+const app = express();
+
+app.get("/", function(req, res) {
+    res.send("<h1>Backend is running!</h1>");
+});
+
+app.get("/hello", function(req, res) {
+    res.send("<h1>Hello Express!</h1>");
+});
+
+app.get("/goodbye", function(req, res) {
+    res.send("<h1>Goodbye, Express!</h1>");
+});
 
 //start the web server... app.listen(portnumber,function)
 app.listen(3000,function(){
