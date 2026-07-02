@@ -14,7 +14,18 @@ app.get("/hello", function(req, res) {
 app.get("/goodbye", function(req, res) {
     res.send("<h1>Goodbye, Express!</h1>");
 });
-
+app.get("/api/songs", function(req, res) {
+    res.json([
+        {
+            title: "Uptown Funk",
+            artist: "Bruno Mars"
+        },
+        {
+            title: "Hello",
+            artist: "Adele"
+        }
+    ]);
+});
 //start the web server... app.listen(portnumber,function)
 app.listen(3000,function(){
     console.log("Listening on port 3000")
